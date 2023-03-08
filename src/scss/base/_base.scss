@@ -1,5 +1,8 @@
 body {
     font-family: 'Golos tape', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 .header {
     margin-top: 2rem;
@@ -10,11 +13,8 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Golos+tape:wght@400;500;600&display=swap');
 
 @keyframes bond1 {
-    0% {
-        transform: translate(100%);
-    }
     100% {
-        transform: translate(-100%);
+        transform: translateX(-50%);
     }
 }
 @keyframes bond2 {
@@ -35,41 +35,48 @@ body {
     background: url(https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/98e7ad157545119.637b4ef2d74db.png)
         center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 section {
     position: relative;
     width: 100%;
     height: 100vh;
-    // overflow: hidden;
+    overflow: hidden;
     .bond {
         width: 100%;
         display: flex;
-        div {
-            color: #fff;
-            font-size: 3em;
-            background: #110505;
-            white-space: nowrap;
-            font-weight: 200;
-            tape-transform: lowercase;
-            letter-spacing: -2px;
+        background: #110505;
+        display: flex;
+        align-items: center;
+        .container {
             animation: bond1 20s linear infinite;
-            animation-delay: -40s;
-            &:nth-child(2) {
-                animation: bond2 20s linear infinite;
-                animation-delay: -25s;
-            }
-            span {
-                font-weight: 400;
-            }
-        }
-        &:nth-child(even) {
+            gap: 0.25rem;
+            display: flex;
+            align-items: center;
             div {
-                animation-direction: reverse;
-                &:nth-child(2) {
-                    animation-direction: reverse;
+                color: #fff;
+                font-size: 3em;
+                white-space: nowrap;
+                font-weight: 200;
+                tape-transform: lowercase;
+                letter-spacing: -2px;
+                // &:nth-child(2) {
+                //     animation: bond2 20s linear infinite;
+                //     animation-delay: -25s;
+                // }
+                span {
+                    font-weight: 400;
                 }
             }
         }
+        // &:nth-child(even) {
+        //     div {
+        //         animation-direction: reverse;
+        //         &:nth-child(2) {
+        //             animation-direction: reverse;
+        //         }
+        //     }
+        // }
     }
     .bond.tape-1 {
         transform: rotate(15deg) translateY(100px);
@@ -78,6 +85,7 @@ section {
     .bond.tape-2 {
         transform: rotate(-10deg) translateY(480px) translateX(-100px);
         box-shadow: 0 1px 2px rgba(170, 109, 109, 0.2);
+        width: 100vw;
     }
     .bond.tape-3 {
         transform: rotate(-15deg) translateY(-100px);
